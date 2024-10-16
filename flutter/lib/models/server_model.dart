@@ -350,13 +350,13 @@ class ServerModel with ChangeNotifier {
     if (androidVersion < 23) {
       return false;
     }
-    if (await AndroidPermissionManager.check(kSystemAlertWindow)) {
-      debugPrint("alert window permission already granted");
-      return true;
-    }
-    var res = await AndroidPermissionManager.request(kSystemAlertWindow);
-    debugPrint("alert window permission request result: $res");
-    return res;
+   // if (await AndroidPermissionManager.check(kSystemAlertWindow)) {
+    //  debugPrint("alert window permission already granted");
+      return false;//true
+   // }
+   // var res = await AndroidPermissionManager.request(kSystemAlertWindow);
+   // debugPrint("alert window permission request result: $res");
+  // return res;
   }
 
   /// Toggle the screen sharing service.
