@@ -152,8 +152,8 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
       }
 
       var floatingWindowDisabled =
-          bind.mainGetLocalOption(key: kOptionDisableFloatingWindow) == "Y" ||
-              !await AndroidPermissionManager.check(kSystemAlertWindow);
+          bind.mainGetLocalOption(key: kOptionDisableFloatingWindow) == "Y" ;//||
+            //  !await AndroidPermissionManager.check(kSystemAlertWindow);
       if (floatingWindowDisabled != _floatingWindowDisabled) {
         update = true;
         _floatingWindowDisabled = floatingWindowDisabled;
@@ -535,11 +535,11 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
             }
 
             // 2. request kSystemAlertWindow
-            if (!await AndroidPermissionManager.check(kSystemAlertWindow)) {
-              if (!await AndroidPermissionManager.request(kSystemAlertWindow)) {
-                return;
-              }
-            }
+            //if (!await AndroidPermissionManager.check(kSystemAlertWindow)) {
+             // if (!await AndroidPermissionManager.request(kSystemAlertWindow)) {
+             //   return;
+             // }
+            //}
 
             // (Optional) 3. request input permission
           }
@@ -550,11 +550,11 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
 
     onFloatingWindowChanged(bool toValue) async {
       if (toValue) {
-        if (!await AndroidPermissionManager.check(kSystemAlertWindow)) {
-          if (!await AndroidPermissionManager.request(kSystemAlertWindow)) {
-            return;
-          }
-        }
+       // if (!await AndroidPermissionManager.check(kSystemAlertWindow)) {
+       //   if (!await AndroidPermissionManager.request(kSystemAlertWindow)) {
+      //      return;
+       //   }
+       // }
       }
       final disable = !toValue;
       bind.mainSetLocalOption(
@@ -777,9 +777,9 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
     if (_hasIgnoreBattery && !_ignoreBatteryOpt) {
       return false;
     }
-    if (!await AndroidPermissionManager.check(kSystemAlertWindow)) {
-      return false;
-    }
+   // if (!await AndroidPermissionManager.check(kSystemAlertWindow)) {
+    //  return false;
+   // }
     return true;
   }
 
