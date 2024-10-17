@@ -2372,11 +2372,11 @@ connect(BuildContext context, String id,
   } else {
     if (isFileTransfer) {
       if (isAndroid) {
-        if (!await AndroidPermissionManager.check(kManageExternalStorage)) {
+       /* if (!await AndroidPermissionManager.check(kManageExternalStorage)) {
           if (!await AndroidPermissionManager.request(kManageExternalStorage)) {
             return;
           }
-        }
+        }*/
       }
       if (isWeb) {
         Navigator.push(
