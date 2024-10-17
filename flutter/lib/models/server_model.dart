@@ -386,13 +386,15 @@ class ServerModel with ChangeNotifier {
         stopService();
       }
     } else {
-      await checkRequestNotificationPermission();
+      /*
+      await checkRequestNotificationPermission();   
       if (bind.mainGetLocalOption(key: kOptionDisableFloatingWindow) != 'Y') {
         await checkFloatingWindowPermission();
       }
       if (!await AndroidPermissionManager.check(kManageExternalStorage)) {
         await AndroidPermissionManager.request(kManageExternalStorage);
       }
+      
       final res = await parent.target?.dialogManager
           .show<bool>((setState, close, context) {
         submit() => close(true);
@@ -411,10 +413,10 @@ class ServerModel with ChangeNotifier {
           onSubmit: submit,
           onCancel: close,
         );
-      });
-      if (res == true) {
+      });*/
+      //if (res == true) {
         startService();
-      }
+     // }
     }
   }
 
