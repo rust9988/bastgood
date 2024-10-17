@@ -513,7 +513,7 @@ class ServerInfo extends StatelessWidget {
                   })
             ]).marginOnly(left: 39, bottom: 10),
             // Password
-            Row(children: [
+          /*  Row(children: [
               const Icon(Icons.lock_outline, color: Colors.grey, size: iconSize)
                   .marginOnly(right: iconMarginRight),
               Text(
@@ -541,7 +541,7 @@ class ServerInfo extends StatelessWidget {
                                 model.serverPasswd.value.text.trim());
                           })
                     ])
-            ]).marginOnly(left: 40, bottom: 15),
+            ]).marginOnly(left: 40, bottom: 15),*/
             ConnectionStateNotification()
           ],
         ));
