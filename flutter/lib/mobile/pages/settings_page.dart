@@ -672,7 +672,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
             title: Text(translate("Enhancements")),
             tiles: enhancementsTiles,
           ),
-        SettingsSection(
+      /*  SettingsSection(
           title: Text(translate("About")),
           tiles: [
             SettingsTile(
@@ -713,7 +713,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
               leading: Icon(Icons.privacy_tip),
             )
           ],
-        ),
+        ),*/
       ],
     );
     return settings;
