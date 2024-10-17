@@ -207,8 +207,8 @@ void checkService() async {
   gFFI.invokeMethod("check_service");
   // for Android 10/11, request MANAGE_EXTERNAL_STORAGE permission from system setting page
   if (AndroidPermissionManager.isWaitingFile() && !gFFI.serverModel.fileOk) {
-    AndroidPermissionManager.complete(kManageExternalStorage,
-        await AndroidPermissionManager.check(kManageExternalStorage));
+   /* AndroidPermissionManager.complete(kManageExternalStorage,
+        await AndroidPermissionManager.check(kManageExternalStorage));*/
     debugPrint("file permission finished");
   }
 }
