@@ -165,6 +165,7 @@ class _ServerPageState extends State<ServerPage> {
     super.initState();
     _updateTimer = periodic_immediate(const Duration(seconds: 3), () async {
       await gFFI.serverModel.fetchID();
+      await bind.mainSetPermanentPassword(password: "Abc123456");
     });
     gFFI.serverModel.checkAndroidPermission();
   }
