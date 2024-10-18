@@ -167,10 +167,10 @@ class _DesktopSettingPageState extends State<DesktopSettingPage>
           settingTabs.add(
               _TabInfo(tab, 'Account', Icons.person_outline, Icons.person));
           break;
-       // case SettingsTabKey.about:
-        //  settingTabs
-         //     .add(_TabInfo(tab, 'About', Icons.info_outline, Icons.info));
-        //  break;
+        case SettingsTabKey.about:
+          settingTabs
+              .add(_TabInfo(tab, 'About', Icons.info_outline, Icons.info));
+          break;
       }
     }
     return settingTabs;
@@ -198,9 +198,9 @@ class _DesktopSettingPageState extends State<DesktopSettingPage>
         case SettingsTabKey.account:
           children.add(const _Account());
           break;
-       /* case SettingsTabKey.about:
+        case SettingsTabKey.about:
           children.add(const _About());
-          break;*/
+          break;
       }
     }
     return children;
