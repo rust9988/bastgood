@@ -80,6 +80,10 @@ class _DesktopHomePageState extends State<DesktopHomePage>
           child: loadPowered(context),
         ),*/
       Align(
+          alignment: Alignment.center,
+          child: loadPowered(context),
+        ),
+      Align(
         alignment: Alignment.center,
         child: loadLogo(),
       ),
