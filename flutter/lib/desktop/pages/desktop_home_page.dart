@@ -75,10 +75,10 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     final children = <Widget>[
       if (!isOutgoingOnly) buildPresetPasswordWarning(),
       if (bind.isCustomClient())
-        Align(
+       /* Align(
           alignment: Alignment.center,
           child: loadPowered(context),
-        ),
+        ),*/
       Align(
         alignment: Alignment.center,
         child: loadLogo(),
