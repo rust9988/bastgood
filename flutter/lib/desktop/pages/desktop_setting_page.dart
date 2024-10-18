@@ -167,10 +167,10 @@ class _DesktopSettingPageState extends State<DesktopSettingPage>
           settingTabs.add(
               _TabInfo(tab, 'Account', Icons.person_outline, Icons.person));
           break;
-        case SettingsTabKey.about:
-          settingTabs
-              .add(_TabInfo(tab, 'About', Icons.info_outline, Icons.info));
-          break;
+       // case SettingsTabKey.about:
+        //  settingTabs
+         //     .add(_TabInfo(tab, 'About', Icons.info_outline, Icons.info));
+        //  break;
       }
     }
     return settingTabs;
