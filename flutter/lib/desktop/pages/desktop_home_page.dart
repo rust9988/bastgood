@@ -428,7 +428,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     }
 
     if (isWindows && !bind.isDisableInstallation()) {
-      if (!bind.mainIsInstalled()) {
+      /*if (!bind.mainIsInstalled()) {
         return buildInstallCard(
             "", bind.isOutgoingOnly() ? "" : "install_tip", "Install",
             () async {
@@ -442,7 +442,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
           await rustDeskWinManager.closeAllSubWindows();
           bind.mainUpdateMe();
         });
-      }
+      }*/
     } else if (isMacOS) {
       final isOutgoingOnly = bind.isOutgoingOnly();
       if (!(isOutgoingOnly || bind.mainIsCanScreenRecording(prompt: false))) {
