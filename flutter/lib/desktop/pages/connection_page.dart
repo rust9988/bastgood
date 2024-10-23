@@ -301,8 +301,8 @@ class _ConnectionPageState extends State<ConnectionPage>
   void onConnect({bool isFileTransfer = false}) {
     var id = _idController.id;
 if (gFFI.userModel.userName.value.isEmpty) {
- //loginDialog();
-connect(context, id, isFileTransfer: isFileTransfer);
+loginDialog();
+//connect(context, id, isFileTransfer: isFileTransfer);
 }
 else
 {
