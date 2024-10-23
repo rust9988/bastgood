@@ -300,15 +300,15 @@ class _ConnectionPageState extends State<ConnectionPage>
   /// Connects to the selected peer.
   void onConnect({bool isFileTransfer = false}) {
     var id = _idController.id;
-    if (gFFI.userModel.userName.value.isEmpty) {
-         loginDialog();
+   if (!gFFI.userModel.isLogin) 
+        // loginDialog();
+	    connect(context, id, isFileTransfer: isFileTransfer);
     }
-	else
-	{
-	   //判断是否超时
-        connect(context, id, isFileTransfer: isFileTransfer);
-	}
-   // connect(context, id, isFileTransfer: isFileTransfer);
+    else
+   {
+ //判断是否超时
+    connect(context, id, isFileTransfer: isFileTransfer);
+   }
   }
 
   Future<void> _fetchPeers() async {
