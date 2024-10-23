@@ -19,6 +19,9 @@ import '../../common/widgets/autocomplete.dart';
 import '../../models/platform_model.dart';
 import '../widgets/button.dart';
 
+import '../../common/widgets/dialog.dart';
+import '../../common/widgets/login.dart';
+
 class OnlineStatusWidget extends StatefulWidget {
   const OnlineStatusWidget({Key? key, this.onSvcStatusChanged})
       : super(key: key);
@@ -297,7 +300,15 @@ class _ConnectionPageState extends State<ConnectionPage>
   /// Connects to the selected peer.
   void onConnect({bool isFileTransfer = false}) {
     var id = _idController.id;
-    connect(context, id, isFileTransfer: isFileTransfer);
+    if (gFFI.userModel.userName.value.isEmpty) {
+         loginDialog();
+    }
+	else
+	{
+	   //判断是否超时
+        connect(context, id, isFileTransfer: isFileTransfer);
+	}
+   // connect(context, id, isFileTransfer: isFileTransfer);
   }
 
   Future<void> _fetchPeers() async {
