@@ -480,6 +480,10 @@ Future<bool?> loginDialog() async {
         setState(() => passwordMsg = translate('Password missed'));
         return;
       }
+
+      sUserName=username.text;
+      sPassword=password.text;
+      
       curOP.value = 'rustdesk';
       setState(() => isInProgress = true);
       try {
