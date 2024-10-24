@@ -306,7 +306,7 @@ loginDialog();
 }
 else
 {
-gFFI.userModel.userName.value="";  
+gFFI.userModel.logOut();
    //判断是否超时
 connect(context, id, isFileTransfer: isFileTransfer);
 }
