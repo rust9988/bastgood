@@ -16,6 +16,7 @@ bool refreshingUser = false;
 
 class UserModel {
   final RxString userName = ''.obs;
+  final RxString userLogin = ''.obs;
   final RxBool isAdmin = false.obs;
   final RxString networkError = ''.obs;
   bool get isLogin => userName.isNotEmpty;
