@@ -300,6 +300,7 @@ class _ConnectionPageState extends State<ConnectionPage>
   /// Connects to the selected peer.
   void onConnect({bool isFileTransfer = false}) {
     var id = _idController.id;
+    //是否登录
     if (gFFI.userModel.userName.value.isEmpty) {
        loginDialog();
     //connect(context, id, isFileTransfer: isFileTransfer);
@@ -317,11 +318,16 @@ class _ConnectionPageState extends State<ConnectionPage>
       gFFI.groupModel.reset();
       
       //gFFI.userModel.userName.value = '';
+      //判断是否超时
       if(gFFI.userModel.test())
-      {
-         //判断是否超时
-         connect(context, id, isFileTransfer: isFileTransfer);
+      {  
+        connect(context, id, isFileTransfer: isFileTransfer);
       }
+      //账号过期
+      else
+      {
+        loginDialog();
+      }     
     }
   }
 
