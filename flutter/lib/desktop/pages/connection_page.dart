@@ -317,9 +317,11 @@ class _ConnectionPageState extends State<ConnectionPage>
       gFFI.groupModel.reset();
       
       //gFFI.userModel.userName.value = '';
-        
-      //判断是否超时
-      connect(context, id, isFileTransfer: isFileTransfer);
+      if(gFFI.userModel.test())
+      {
+         //判断是否超时
+         connect(context, id, isFileTransfer: isFileTransfer);
+      }
     }
   }
 
