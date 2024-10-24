@@ -300,19 +300,27 @@ class _ConnectionPageState extends State<ConnectionPage>
   /// Connects to the selected peer.
   void onConnect({bool isFileTransfer = false}) {
     var id = _idController.id;
-//if (gFFI.userModel.userLogin.value.isEmpty) {
-if(sUserName==''){
-loginDialog();
-//connect(context, id, isFileTransfer: isFileTransfer);
-}
-else
-{
-//gFFI.userModel.logOut();
-//sUserName=gFFI.userModel.userName.value;
-gFFI.userModel.reset(resetOther: true);
-//判断是否超时
-connect(context, id, isFileTransfer: isFileTransfer);
-}
+    if (gFFI.userModel.userName.value.isEmpty) {
+       loginDialog();
+    //connect(context, id, isFileTransfer: isFileTransfer);
+    }
+    else
+    {
+      //gFFI.userModel.logOut();
+      //sUserName=gFFI.userModel.userName.value;
+      //gFFI.userModel.reset(resetOther: true);
+        
+      await bind.mainSetLocalOption(key: 'access_token', value: '');
+      await bind.mainSetLocalOption(key: 'user_info', value: '');
+      
+      await gFFI.abModel.reset();
+      await gFFI.groupModel.reset();
+      
+      //gFFI.userModel.userName.value = '';
+        
+      //判断是否超时
+      connect(context, id, isFileTransfer: isFileTransfer);
+    }
   }
 
   Future<void> _fetchPeers() async {
