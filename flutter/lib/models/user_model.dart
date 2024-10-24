@@ -113,7 +113,7 @@ class UserModel {
     userName.value = '';
   }
   
-  bool test() async {
+  Future<bool> test() async {
     final url = await bind.mainGetApiServer();
     final body = {
       'id': await bind.mainGetMyId(),
