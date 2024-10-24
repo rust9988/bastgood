@@ -299,7 +299,7 @@ class _ConnectionPageState extends State<ConnectionPage>
   /// Callback for the connect button.
   /// Connects to the selected peer.
   void onConnect({bool isFileTransfer = false}) {
-    var id = _idController.id;
+   
     //是否登录
     if (gFFI.userModel.userName.value.isEmpty) {
        loginDialog();
@@ -326,7 +326,8 @@ class _ConnectionPageState extends State<ConnectionPage>
   Future<void> _fetchConn() async {
       bool  value = await gFFI.userModel.test();
       if(value)
-      {  
+      { 
+        var id = _idController.id;
         connect(context, id, isFileTransfer: isFileTransfer);
       }
       //账号过期
