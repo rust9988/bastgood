@@ -112,7 +112,41 @@ class UserModel {
     }
     userName.value = '';
   }
-
+  
+  bool test() async {
+    final url = await bind.mainGetApiServer();
+    final body = {
+      'id': await bind.mainGetMyId(),
+      'uuid': await bind.mainGetUuid()
+    };
+  
+    final http.Response response;
+    try {
+      response = await http.post(Uri.parse('$url/api/currentUser'),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: json.encode(body));
+    } catch (e) {
+      return false;
+    }
+    final status = response.statusCode;
+    if (status == 401 || status == 400) {
+      //reset(resetOther: status == 401);
+      return false;
+    }
+    final data = json.decode(utf8.decode(response.bodyBytes));
+    final error = data['error'];
+    if (error != null) {
+      return false;
+    }
+  
+  if(data.toLowerCase().contains('access_token'))
+     return true;
+  else
+     return false;
+  }
+  
   _parseAndUpdateUser(UserPayload user) {
     userName.value = user.name;
     isAdmin.value = user.isAdmin;
