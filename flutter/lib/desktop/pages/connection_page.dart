@@ -310,11 +310,11 @@ class _ConnectionPageState extends State<ConnectionPage>
       //sUserName=gFFI.userModel.userName.value;
       //gFFI.userModel.reset(resetOther: true);
         
-      await bind.mainSetLocalOption(key: 'access_token', value: '');
-      await bind.mainSetLocalOption(key: 'user_info', value: '');
+      bind.mainSetLocalOption(key: 'access_token', value: '');
+      bind.mainSetLocalOption(key: 'user_info', value: '');
       
-      await gFFI.abModel.reset();
-      await gFFI.groupModel.reset();
+      gFFI.abModel.reset();
+      gFFI.groupModel.reset();
       
       //gFFI.userModel.userName.value = '';
         
