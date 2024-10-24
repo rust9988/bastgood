@@ -319,11 +319,11 @@ class _ConnectionPageState extends State<ConnectionPage>
       
       //gFFI.userModel.userName.value = '';
       //判断是否超时
-       _fetchConn(); 
+       _fetchConn(isFileTransfer); 
     }
   }
 
-  Future<void> _fetchConn() async {
+  Future<void> _fetchConn({bool isFileTransfer = false}) async {
       bool  value = await gFFI.userModel.test();
       if(value)
       { 
