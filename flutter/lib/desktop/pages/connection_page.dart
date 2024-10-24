@@ -328,7 +328,7 @@ class _ConnectionPageState extends State<ConnectionPage>
       if(value)
       { 
         var id = _idController.id;
-        connect(context, id, isFileTransfer: isFileTransfer);
+       await connect(context, id, isFileTransfer: isFileTransfer);
       }
       //账号过期
       else
