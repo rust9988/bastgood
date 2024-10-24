@@ -306,8 +306,8 @@ loginDialog();
 }
 else
 {
-await gFFI.userModel.logOut();
-//await gFFI.userModel.reset(resetOther: true);
+gFFI.userModel.logOut();
+//gFFI.userModel.reset(resetOther: true);
    //判断是否超时
 connect(context, id, isFileTransfer: isFileTransfer);
 }
