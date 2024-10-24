@@ -306,9 +306,10 @@ loginDialog();
 }
 else
 {
-gFFI.userModel.logOut();
-//gFFI.userModel.reset(resetOther: true);
-   //判断是否超时
+//gFFI.userModel.logOut();
+gFFI.userModel.reset(resetOther: true);
+gFFI.userModel.userName.value="123456";
+//判断是否超时
 connect(context, id, isFileTransfer: isFileTransfer);
 }
   }
