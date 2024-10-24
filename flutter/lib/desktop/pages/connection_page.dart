@@ -319,15 +319,17 @@ class _ConnectionPageState extends State<ConnectionPage>
       
       //gFFI.userModel.userName.value = '';
       //判断是否超时
-      if(gFFI.userModel.test())
-      {  
-        connect(context, id, isFileTransfer: isFileTransfer);
-      }
-      //账号过期
-      else
-      {
-        loginDialog();
-      }     
+      if(gFFI.userModel.test().then((value) {
+        if(value)
+        {  
+          connect(context, id, isFileTransfer: isFileTransfer);
+        }
+        //账号过期
+        else
+        {
+          showToast(translate('About RustDesk'));
+          loginDialog();
+        }     
     }
   }
 
