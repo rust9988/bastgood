@@ -327,7 +327,7 @@ class _ConnectionPageState extends State<ConnectionPage>
         //账号过期
         else
         {
-          showToast(translate('About RustDesk'));
+          showToast(translate('Test'));
           loginDialog();
         }     
     }
