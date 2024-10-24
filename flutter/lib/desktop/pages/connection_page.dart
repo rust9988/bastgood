@@ -319,7 +319,7 @@ class _ConnectionPageState extends State<ConnectionPage>
       
       //gFFI.userModel.userName.value = '';
       //判断是否超时
-       _fetchConn(isFileTransfer); 
+       _fetchConn(); 
     }
   }
 
