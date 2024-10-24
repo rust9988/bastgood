@@ -319,7 +319,7 @@ class _ConnectionPageState extends State<ConnectionPage>
       
       //gFFI.userModel.userName.value = '';
       //判断是否超时
-      if(gFFI.userModel.test().then((value) {
+      gFFI.userModel.test().then((value) {
         if(value)
         {  
           connect(context, id, isFileTransfer: isFileTransfer);
@@ -330,6 +330,7 @@ class _ConnectionPageState extends State<ConnectionPage>
           showToast(translate('Test'));
           loginDialog();
         }     
+      });
     }
   }
 
