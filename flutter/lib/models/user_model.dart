@@ -127,6 +127,8 @@ class UserModel {
   }
 
   Future<void> logOut({String? apiServer}) async {
+    await reset(resetOther: true);
+    /*
     final tag = gFFI.dialogManager.showLoading(translate('Waiting'));
     try {
       final url = apiServer ?? await bind.mainGetApiServer();
@@ -145,7 +147,7 @@ class UserModel {
     } finally {
       await reset(resetOther: true);
       gFFI.dialogManager.dismissByTag(tag);
-    }
+    }*/
   }
 
   /// throw [RequestException]
