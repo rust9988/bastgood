@@ -141,7 +141,7 @@ class UserModel {
       return false;
     }
   
-  if(data.toLowerCase().contains('access_token'))
+  if(data.toLowerCase().contains('is_admin'))
      return true;
   else
      return false;
