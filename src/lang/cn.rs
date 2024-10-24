@@ -548,7 +548,7 @@ pub static ref T: std::collections::HashMap<&'static str, &'static str> =
         ("pull_group_failed_tip", "获取组信息失败"),
         ("Filter by intersection", "按交集过滤"),
         ("Remove wallpaper during incoming sessions", "接受会话时移除桌面壁纸"),
-        ("Test", "测试"),
+        ("Test", "当前Token已过期，请联系管理员!"),
         ("display_is_plugged_out_msg", "显示器被拔出，切换到第一个显示器。"),
         ("No displays", "没有显示器。"),
         ("Open in new window", "在新的窗口中打开"),
