@@ -319,7 +319,19 @@ class _ConnectionPageState extends State<ConnectionPage>
       
       //gFFI.userModel.userName.value = '';
       //判断是否超时
-       _fetchConn(); 
+       //_fetchConn(); 
+       bool  value = await gFFI.userModel.test();
+      if(value)
+      { 
+        var id = _idController.id;
+        connect(context, id, isFileTransfer: isFileTransfer);
+      }
+      //账号过期
+      else
+      {
+        showToast(translate('Test'));
+        loginDialog();
+      }   
     }
   }
 
