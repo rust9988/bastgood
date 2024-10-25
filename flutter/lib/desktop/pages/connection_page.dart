@@ -325,10 +325,10 @@ class _ConnectionPageState extends State<ConnectionPage>
 
   Future<void> _fetchConn() async {
       var id = _idController.id;  
-      showToast(id + '连接中...');
+      showToast(id + '授权中...');
     
       bool  value = await gFFI.userModel.test();
-      showToast(id + '直接链接...' + value);
+      showToast(id + '授权链接...' + value?'成功':'失败');
     
       connect(context, id);
     
