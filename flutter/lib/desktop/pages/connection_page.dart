@@ -318,24 +318,23 @@ class _ConnectionPageState extends State<ConnectionPage>
       gFFI.groupModel.reset();
       
       //gFFI.userModel.userName.value = '';
+
+      var Transfer=isFileTransfer;
       //判断是否超时
-       _fetchConn(); 
+       _fetchConn(Transfer); 
     }
   }
 
-  Future<void> _fetchConn() async {
+  Future<void> _fetchConn({bool isFileTransfer = false}) async {
       var id = _idController.id;  
-      showToast(id + '授权中...');
-    
-      bool  value = await gFFI.userModel.test();
-      var success =  value?'成功':'失败';
-      showToast(id + '授权链接...' + success);
-    
-      connect(context, id);
-    
+      //showToast(id + '授权中...');  
+      bool  value = await gFFI.userModel.test();    
+      //var success =  value?'成功':'失败';   
+      //showToast(id + '授权链接...' + success);
+      //账号有效
       if(value)
       {  
-        //connect(context, id);
+        connect(context, id,isFileTransfer: isFileTransfer);
       }
       //账号过期
       else
