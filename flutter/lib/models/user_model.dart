@@ -145,8 +145,8 @@ class UserModel {
     {   
       final expdate = data['expdate'];
       if (expdate != null) {
-         gFFI.userModel.userLogin.value = data['name'] + "_" + data['expdate'];
-         gFFI.userModel.userName.value = data['name'] + "_" + data['expdate'];
+         gFFI.userModel.userLogin.value = data['name'] + "_有效期:" + data['expdate'];
+         gFFI.userModel.userName.value = data['name'] + "_有效期:" + data['expdate'];
       }
       return true;
     }
