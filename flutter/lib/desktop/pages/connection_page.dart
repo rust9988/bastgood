@@ -321,7 +321,7 @@ class _ConnectionPageState extends State<ConnectionPage>
 
       var Transfer=isFileTransfer;
       //判断是否超时
-       _fetchConn(Transfer); 
+       _fetchConn(isFileTransfer: Transfer); 
     }
   }
 
