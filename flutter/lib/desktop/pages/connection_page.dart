@@ -80,7 +80,9 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
         );
     
     UserDateWidget() => Offstage(
-          offstage: !_svcStopped.value,
+          offstage: !(!_svcStopped.value &&
+                stateGlobal.svcStatus.value == SvcStatus.ready &&
+                _svcIsUsingPublicServer.value),
           child: InkWell(
                   child: Text("用户名:" + gFFI.userModel.userName.value,
                       style: TextStyle(
@@ -146,7 +148,7 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
             // No need to show the guide if is custom client.
             if (!isIncomingOnly) setupServerWidget(),
             // username 20241025
-            if (!gFFI.userModel.userName.value.isEmpty) UserDateWidget(),
+            if (!isIncomingOnly) UserDateWidget(),
           ],
         );
 
