@@ -84,7 +84,7 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
                 stateGlobal.svcStatus.value == SvcStatus.ready &&
                 _svcIsUsingPublicServer.value),
           child: InkWell(
-                  child: Text("用户名:" + gFFI.userModel.userName.value,
+                  child: Text("用户名:" + gFFI.userModel.userLogin.value,
                       style: TextStyle(
                           decoration: TextDecoration.underline, fontSize: em)))
               .marginOnly(left: em),
