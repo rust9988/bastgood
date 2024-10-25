@@ -141,7 +141,7 @@ class UserModel {
       return false;
     }
   
-  if(data.toLowerCase().contains('is_admin'))
+  if(data['name']!=null && data['name']==gFFI.userModel.userName.value)
      return true;
   else
      return false;
