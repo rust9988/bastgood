@@ -324,12 +324,17 @@ class _ConnectionPageState extends State<ConnectionPage>
   }
 
   Future<void> _fetchConn() async {
+      var id = _idController.id;  
+      showToast(id + '连接中...');
+    
       bool  value = await gFFI.userModel.test();
+      showToast(id + '直接链接...' + value);
+    
+      connect(context, id);
+    
       if(value)
-      { 
-        var id = _idController.id;  
-        showToast(id + '开始链接');
-        connect(context, id);
+      {  
+        //connect(context, id);
       }
       //账号过期
       else
