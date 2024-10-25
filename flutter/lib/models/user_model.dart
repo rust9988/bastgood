@@ -157,6 +157,7 @@ class UserModel {
   
   _parseAndUpdateUser(UserPayload user) {
     userName.value = user.name;
+    userLogin.value = user.name;
     isAdmin.value = user.isAdmin;
     bind.mainSetLocalOption(key: 'user_info', value: jsonEncode(user));
   }
