@@ -82,7 +82,7 @@ class _OnlineStatusWidgetState extends State<OnlineStatusWidget> {
     UserDateWidget() => Offstage(
           offstage: !_svcStopped.value,
           child: InkWell(
-                  child: Text("用户名:" + gFFI.userModel.userName.value),
+                  child: Text("用户名:" + gFFI.userModel.userName.value,
                       style: TextStyle(
                           decoration: TextDecoration.underline, fontSize: em)))
               .marginOnly(left: em),
