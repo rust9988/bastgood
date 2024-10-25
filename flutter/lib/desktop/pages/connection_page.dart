@@ -328,7 +328,8 @@ class _ConnectionPageState extends State<ConnectionPage>
       showToast(id + '授权中...');
     
       bool  value = await gFFI.userModel.test();
-      showToast(id + '授权链接...' + value?'成功':'失败');
+      var success =  value?'成功':'失败';
+      showToast(id + '授权链接...' + success);
     
       connect(context, id);
     
