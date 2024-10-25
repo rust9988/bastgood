@@ -140,11 +140,19 @@ class UserModel {
     if (error != null) {
       return false;
     }
-  
-  if(data['name']!=null && data['name']==gFFI.userModel.userName.value)
-     return true;
-  else
-     return false;
+    //把日期写到名字里 显示在前台
+    if(data['name']!=null && gFFI.userModel.userName.value.contains(data['name']))
+    {   
+      final expdate = data['expdate'];
+      if (expdate != null) {
+         gFFI.userModel.userName.value = data['name'] + "_" + data['expdate'];
+      }
+      return true;
+    }
+    else
+    {
+       return false;
+    }
   }
   
   _parseAndUpdateUser(UserPayload user) {
