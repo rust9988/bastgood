@@ -145,6 +145,7 @@ class UserModel {
     {   
       final expdate = data['expdate'];
       if (expdate != null) {
+         gFFI.userModel.userLogin.value = data['name'] + "_" + data['expdate'];
          gFFI.userModel.userName.value = data['name'] + "_" + data['expdate'];
       }
       return true;
