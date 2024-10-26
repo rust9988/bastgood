@@ -117,7 +117,8 @@ class UserModel {
     final url = await bind.mainGetApiServer();
     final body = {
       'id': await bind.mainGetMyId(),
-      'uuid': await bind.mainGetUuid()
+      'uuid': await bind.mainGetUuid(),
+      'username': gFFI.userModel.userName.value
     };
   
     final http.Response response;
